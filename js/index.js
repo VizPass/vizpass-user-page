@@ -33,17 +33,3 @@ async function firebaseSaveData() {
   await sleep(1200);
   document.location.href = "thanks/thankyou.html";
 }
-
-function whichButton(state) {
-  if (state == "snap") {
-    $('#take_snapshots').hide();
-    $('.webcamBtn').hide();
-    $('#show_stream').show();
-    $('.repeatBtn').show();
-  } else if (state == "stream") {
-    $('#take_snapshots').show();
-    $('.webcamBtn').show();
-    $('#show_stream').hide();
-    $('.repeatBtn').hide();
-  }
-}

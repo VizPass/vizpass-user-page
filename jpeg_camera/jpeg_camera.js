@@ -1,6 +1,20 @@
 /*! JpegCamera 1.3.3 | 2016-09-18
     (c) 2013 Adam Wrobel
     https://amw.github.io/jpeg_camera */
+
+    function whichButton(state) {
+      if (state == "snap") {
+        $('#take_snapshots').hide();
+        $('.webcamBtn').hide();
+        $('#show_stream').show();
+        $('.repeatBtn').show();
+      } else if (state == "stream") {
+        $('#take_snapshots').show();
+        $('.webcamBtn').show();
+        $('#show_stream').hide();
+        $('.repeatBtn').hide();
+      }
+    }
 (function() {
   var JpegCamera, JpegCameraFlash, JpegCameraHtml5, Snapshot, Stats, can_play, can_use_flash, check_canvas_to_blob, mpeg_audio, should_try_flash, supported_flash_version, vorbis_audio, _ref, _ref1,
     __hasProp = {}.hasOwnProperty,
@@ -455,8 +469,6 @@
       JpegCameraHtml5.prototype._engine_upload = function(snapshot, api_url, csrf_token, timeout) {
         this._debug("Uploading the file");
         return snapshot.get_blob(function(blob) {
-
-
           var handler, xhr;
           handler = function(event) {
             delete snapshot._xhr;

@@ -22,14 +22,12 @@ async function firebaseSaveData() {
   var id = fName.concat(lName).toLowerCase();
 
   var firebaseRef = firebase.database().ref("tasks/3H9ibes1zagsg1EE1wUYMop7tWD3/" + id);
-  //var usersRef = firebaseRef.child("tasks").child("3H9ibes1zagsg1EE1wUYMop7tWD3");
-  //usersRef.push().set({
     firebaseRef.set ({
     first_name: fName,
     title: fullName
   });
 
   document.getElementById("upload_snapshot").click();
-  await sleep(3000);
+  await sleep(2000);
   document.location.href = "thanks/thankyou.html";
 }

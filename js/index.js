@@ -30,5 +30,6 @@ async function firebaseSaveData() {
   });
 
   document.getElementById("upload_snapshot").click();
-
+  await sleep(3000);
+  document.location.href = "thanks/thankyou.html";
 }

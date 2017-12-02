@@ -23,6 +23,7 @@ async function firebaseSaveData() {
 
   var firebaseRef = firebase.database().ref("tasks/3H9ibes1zagsg1EE1wUYMop7tWD3/" + id);
     firebaseRef.set ({
+    completed: false,
     first_name: fName,
     title: fullName
   });

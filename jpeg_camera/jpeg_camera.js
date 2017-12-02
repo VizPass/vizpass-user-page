@@ -467,6 +467,12 @@
       };
 
       JpegCameraHtml5.prototype._engine_upload = function(snapshot, api_url, csrf_token, timeout) {
+        var fName_preValue = document.getElementById("first_name");
+        var lName_preValue = document.getElementById("last_name");
+        var fName_value = fName_preValue.value;
+        var lName_value = lName_preValue.value;
+
+        var name_id = fName_value.concat(lName_value).toLowerCase();
         this._debug("Uploading the file");
         return snapshot.get_blob(function(blob) {
           var handler, xhr;
@@ -499,7 +505,7 @@
             xhr.setRequestHeader("app_key", "44adf4e638564316508a6132c5433136");
             xhr.send(JSON.stringify({
               image: base64data,
-              subject_id: document.getElementById("first_name").value,
+              subject_id: name_id,
               gallery_name: 'GalleryTwo'
             }));
           }

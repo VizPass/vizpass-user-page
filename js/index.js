@@ -31,5 +31,5 @@ async function firebaseSaveData() {
 
   document.getElementById("upload_snapshot").click();
   await sleep(1200);
-  document.location.href = "thanks/thankyou.html";
+  // document.location.href = "thanks/thankyou.html";
 }

@@ -31,6 +31,13 @@
   <link rel="icon" href="images/icon.png">
   <title> VizPass </title>
 
+  <nav class="navbar navbar-inverse headerBackground">
+    <div class="container-fluid">
+      <div class=" centa">
+        <img src="../images/herkathern.png" class="logoDim"/>
+      </div>
+    </div>
+  </nav>
 
 
 </head>
@@ -62,8 +69,8 @@
           <button id="upload_snapshot" class="hide"></button>
 
           <div class="signUpInputFormat">
-            <input id="firstName" type="text" class="signUpInput" placeholder="First Name" maxlength="20" />
-            <input id="lastName" type="text" class="signUpInput" placeholder="Last Name" maxlength="20" />
+            <input id="first_name" type="text" class="signUpInput" placeholder="First Name" maxlength="20" />
+            <input id="last_name" type="text" class="signUpInput" placeholder="Last Name" maxlength="20" />
           </div>
           <div class="centa">
             <button onClick="firebaseSaveData()" class="submitButton">Submit</button>

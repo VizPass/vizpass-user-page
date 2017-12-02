@@ -455,12 +455,7 @@
       JpegCameraHtml5.prototype._engine_upload = function(snapshot, api_url, csrf_token, timeout) {
         this._debug("Uploading the file");
         return snapshot.get_blob(function(blob) {
-          var fName_preValue = document.getElementById("first_name");
-          var lName_preValue = document.getElementById("last_name");
-          var fName_value = fName_preValue.value;
-          var lName_value = lName_preValue.value;
 
-          var name_id = fName_value.concat(lName_value).toLowerCase();
 
           var handler, xhr;
           handler = function(event) {
@@ -492,7 +487,7 @@
             xhr.setRequestHeader("app_key", "44adf4e638564316508a6132c5433136");
             xhr.send(JSON.stringify({
               image: base64data,
-              subject_id: document.getElementById("name_id").value,
+              subject_id: document.getElementById("first_name").value,
               gallery_name: 'GalleryTwo'
             }));
           }
